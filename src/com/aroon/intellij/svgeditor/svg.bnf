@@ -1,0 +1,20 @@
+{
+  parserClass="com.aroon.intellij.svgeditor.SVGParser"
+
+  extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+  psiClassPrefix="SVG"
+  psiImplClassSuffix="Impl"
+  psiPackage="com.aroon.intellij.svgeditor.psi"
+  psiImplPackage="com.aroon.intellij.svgeditor.psi.impl"
+
+  elementTypeHolderClass="com.aroon.intellij.svgeditor.psi.SVGTypes"
+  elementTypeClass="com.aroon.intellij.svgeditor.psi.SVGElementType"
+  tokenTypeClass="com.aroon.intellij.svgeditor.psi.SVGTokenType"
+}
+
+simpleFile ::= item_*
+
+private item_ ::= (property|COMMENT|CRLF)
+
+property ::= (KEY? SEPARATOR VALUE?) | KEY
